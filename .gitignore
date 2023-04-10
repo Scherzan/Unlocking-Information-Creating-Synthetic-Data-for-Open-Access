@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ignore models, data and metadat for now
+.json
+.pkl
+.xslx
+.csv
+#  Folders
+results/
+images/
+
+# Files to ignore:
+demo_ctgan.ipynb
+demo_ctgan_default.ipynb
+data_gen.__pycache__stgan_ray.ipynb
