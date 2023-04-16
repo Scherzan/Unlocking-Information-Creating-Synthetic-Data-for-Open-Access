@@ -4,20 +4,13 @@ import json
 
 
 import fixed_params as fp
-from utils.helper_f import load_reports, get_image_paths
+from utils.helper_f import load_reports, get_image_paths, local_css_from_str, str_css
 from sdv.single_table import CTGANSynthesizer
 from sdv.metadata import SingleTableMetadata
+from pages.evaluation.chart_metrics import c
+from streamlit_echarts import st_pyecharts
 
-
-st.markdown("""
-    <style>
-      section[data-testid="stSidebar"][aria-expanded="true"]{
-        width: 10% !important;
-      }
-      section[data-testid="stSidebar"][aria-expanded="false"]{
-        width: 10% !important;
-      }
-    </style>""", unsafe_allow_html=True)
+local_css_from_str([str_css]) 
 
 
 @st.cache_data
@@ -31,121 +24,72 @@ def get_eval_utils(synth_data_path = "synthetic_rpad.csv", model_path = 'rpad_ep
     metadata = SingleTableMetadata.load_from_dict(metadata_dict)
     return rpad_df, rpad_synth, model, metadata
 
-st.sidebar.title(":memo: Chose Eval Setting")
+st.sidebar.title(":memo: Choose eval case")
    
    
 with st.sidebar:
 
     genre = st.radio(
-        "Synthetic Data",
+        "Synthetic data",
         ('default', 'with metadata', 'with constraints', 'with tuning',  'best setting')) #'conditional sampling',
     
     if genre == 'default':
         diagnostic_report, report_q = load_reports('default')
-        path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt = get_image_paths('default')
+        path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt = get_image_paths('default')
     if genre == 'with metadata':
         diagnostic_report, report_q = load_reports('metadata')
-        path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt = get_image_paths('metadata')
+        path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt = get_image_paths('metadata')
     if genre == 'with constraints':
         diagnostic_report, report_q = load_reports('constraints')
-        path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt = get_image_paths('constraints')
+        path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt = get_image_paths('constraints')
     if genre == 'with tuning':
         diagnostic_report, report_q = load_reports('tuning')
-        path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt = get_image_paths('tuning')
+        path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt = get_image_paths('tuning')
     if genre == 'best setting':
         diagnostic_report, report_q = load_reports('best_setting')
-        path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt = get_image_paths('best_setting')
+        path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt = get_image_paths('best_setting')
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Fidelity: Data Diagnostics", "Fidelity: 1D - Data Quality", "Fidelity: 2D - Data Quality", "Fidelity: 3D - Data Quality", "Utility", "Privacy"])
-
-
+tab1, tab2, tab3, tab4 = st.tabs(["Many Metrics", "guide your SD evaluation", "e.g. statistical indicators", "and visual inspections."])
 
 with tab1:
-
-   st.header("Data Diagnostics")
+   st.markdown("### What metrics are there?")
+   st.markdown("###### Overview by Hernandez et al. 2021 'Standardised Metrics and Methods for Synthetic Tabular Data Evaluation'; TechRxiv; (edited)")
+   st_pyecharts(c, height = 500)
    
-   with st.expander(label="Show Code: Diagnostic Report", expanded=False):
-      st.code( # write to file
-        """
-        from sdmetrics.reports.single_table import DiagnosticReport
-
-        dg_report = DiagnosticReport()
-        dg_report.generate(rpad_df, rpad_synth, metadata, verbose=True)
-        
-        """,
-        language="python",
-        )
-
-   st.write(diagnostic_report.get_results())   
-
-   with st.expander(label="Show Code: Value Range", expanded=False):
-      st.code( 
-        """
-        from sdv.evaluation.single_table import get_column_plot
-
-        fig = get_column_plot(
-         real_data=rpad_df,
-         synthetic_data=rpad_synth,
-         column_name='Length_of_Stay',
-         metadata=metadata
-        )
-    
-        fig.show() 
-        
-        """,
-        language="python",
-        )
-   
-   st.image(path_len_of_stay_plt)
-  
 
 with tab2:
-   # missing metrics description
+   st.markdown("### Evaluation strategy")
+   st.image("images/eval_strategy.png")
    
-   with st.expander(label="Show Code: Quality Report", expanded=False):
-      st.code(
-           """
-           from sdv.evaluation.single_table import evaluate_quality
-
-           quality_report = evaluate_quality(rpad_df, rpad_synth, metadata, verbose=True) 
-           """,
-           language="python",
-      )
-   
-   
-   st.write("### Quality Report Summary")
-
-   st.write(report_q.get_score())
-   st.write(report_q.get_properties())
-   st.image(path_col_shapes_plt)
-
 with tab3:
-   
-   # missing metrics description
-   with st.expander(label="Show Code: 2D Column Comparison", expanded=False):
-      st.code(
-           """
-           from sdv.evaluation.single_table import get_column_pair_plot
 
-           fig = get_column_pair_plot(
-               real_data=rpad_df,
-               synthetic_data=new_data,
-               column_names=['Age', 'Height'],
-               metadata=metadata)
-               
-           fig.show()
-           """,
-           language="python",
-      )
-   st.write("### Compare Distribution Across Columns")
-   
-   st.image(path_age_height_plt)   
+   with st.expander(label="SDV Quality Report includes statistical tests and correlation analysis.", expanded=True):
+      st.write(report_q.get_score())
+      st.write(report_q.get_properties())
+
+   with st.expander(label="Column Shapes Details", expanded=False):
+      st.write(report_q.get_details(property_name='Column Shapes'))
+  
+   with st.expander(label="Column Pair Trends", expanded=False):
+      st.write(report_q.get_details(property_name='Column Pair Trends'))
 
 with tab4:
-   st.write("Hotellings T")
-   st.write('detection metric')
+   # missing metrics description
+   st.markdown("### Visual inspection of single columns:") 
 
-with tab5:
-   st.write("Regression Problem")
-   st.write('Classification Problem')
+   with st.expander(label="Numerical variable plot", expanded=False):
+      st.image(path_len_of_height_plt)
+
+   with st.expander(label="Categorical variable plot", expanded=False):
+      st.image(path_len_of_sex_plt)
+   
+   
+   st.markdown("### Visual inspection of column pairs:")
+
+   with st.expander(label="Plotting 'Weight' and 'Height'", expanded=False):
+       st.image(path_age_height_plt)
+
+   with st.expander(label="Plotting 'Management' and 'Severity'", expanded=False):
+       st.image(path_mng_severity_plt)   
+
    

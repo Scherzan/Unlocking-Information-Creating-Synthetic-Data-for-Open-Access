@@ -22,7 +22,41 @@ def load_reports(folder_name = ""):
     return diagnostic_report, report_q
 
 def get_image_paths(folder_name = ""):
-    path_len_of_stay_plt = f"pages/evaluation/{folder_name}/images/col_plot_len_stay.png"
+    path_len_of_height_plt = f"pages/evaluation/{folder_name}/images/col_plot_height.png"
+    path_len_of_sex_plt = f"pages/evaluation/{folder_name}/images/col_plot_sex.png"
     path_col_shapes_plt = f"pages/evaluation/{folder_name}/images/col_shapes.png"
-    path_age_height_plt = f"pages/evaluation/{folder_name}/images/Age_Height_pair_plot.png"
-    return path_len_of_stay_plt, path_col_shapes_plt, path_age_height_plt
+    path_age_height_plt = f"pages/evaluation/{folder_name}/images/Weight_Height_pair_plot.png"
+    path_mng_severity_plt = f"pages/evaluation/{folder_name}/images/Severity_Management_pair_plot.png"
+    return path_len_of_height_plt, path_len_of_sex_plt, path_col_shapes_plt, path_age_height_plt, path_mng_severity_plt
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+def local_css_from_str(file_name_list):
+    css_details = " ".join(file_name_list)
+    st.markdown(f"<style>{css_details}</style>", unsafe_allow_html=True)
+
+str_css = """
+section[data-testid="stSidebar"][aria-expanded="true"] {
+    width: 10% !important;
+}
+
+section[data-testid="stSidebar"][aria-expanded="false"] {
+    width: 10% !important;
+}
+
+.block-container {
+    max-width: 1000px;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+"""
+
+str_selectbox_text = """
+div[data-testid="stExpander"] div[role="button"] p {
+    font-size: 1.5rem;
+}
+"""

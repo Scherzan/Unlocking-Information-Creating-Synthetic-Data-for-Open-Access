@@ -1,0 +1,1 @@
+{"epochs": 1500, "lr_d": 0.001, "discriminator_steps": 5, "batch_size": 100}
