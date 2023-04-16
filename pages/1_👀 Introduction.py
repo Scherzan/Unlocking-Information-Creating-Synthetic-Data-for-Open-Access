@@ -1,5 +1,5 @@
 #from fixed_params import AUTHOR, IMAGES_DIR
-import fixed_params as fp
+import utils.fixed_params as fp
 import streamlit as st
 from utils.helper_f import local_css_from_str, str_css, str_selectbox_text
 

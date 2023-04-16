@@ -1,9 +1,6 @@
 import streamlit as st
-import fixed_params as fp
-from utils.helper_f import local_css_from_str, str_css
-
-local_css_from_str([str_css]) 
-
+import utils.fixed_params as fp 
+from utils.title import st_write_title
 
 
 # Streamlit webpage properties
@@ -37,5 +34,11 @@ st.markdown("""
       }
     </style>""", unsafe_allow_html=True)
 
+st_write_title()
+
+col_1, col_2, col_3 = st.columns(3)
+
+with col_2:
+   st.image(fp.CONFERENCE_LOGO_PATH, width=200)
 
 

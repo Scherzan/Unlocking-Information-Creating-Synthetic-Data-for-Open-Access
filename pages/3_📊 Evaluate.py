@@ -3,11 +3,11 @@ import pandas as pd
 import json 
 
 
-import fixed_params as fp
+import utils.fixed_params as fp
 from utils.helper_f import load_reports, get_image_paths, local_css_from_str, str_css
 from sdv.single_table import CTGANSynthesizer
 from sdv.metadata import SingleTableMetadata
-from pages.evaluation.chart_metrics import c
+from utils.chart_metrics import c
 from streamlit_echarts import st_pyecharts
 
 local_css_from_str([str_css]) 

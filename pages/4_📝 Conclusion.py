@@ -53,17 +53,17 @@ with tab2:
     no_data_access = st.checkbox("We looked at metrics and how to evaluate synthetic data quality.")
     if no_data_access:
        text_2 = """
-       Yes. But only superficially. The presented metrics would not be enough for a real world use case. 
+       Yes, but only superficially. The presented metrics would not be enough for a real world use case. 
        """
        st.markdown(f'<p style="color:#1f449c">{text_2}</p>', unsafe_allow_html=True)
 
     apply = st.checkbox("What should you take with you?")
     if apply:
-       text_3 = """
-       Finding usefull synthetic data is complex and takes carefull evaluation.
-       we should select our metrics and evaluation strategy according to the specific use case.
-       """
-       st.markdown(f'<p style="color:#1f449c">{text_3}</p>', unsafe_allow_html=True)
+       text_31 = "1. Generating synthetic data is quite easy."
+       text_32 = "2. Generating usefull synthetic data is complex and takes carefull evaluation."
+       text_33 = "3. We need to select our metrics and evaluation strategy according to the specific use case."
+       for txt in [text_31, text_32, text_33]:
+          st.markdown(f'<p style="color:#1f449c";><strong>{txt}</strong></p>', unsafe_allow_html=True)
 
 with tab3: 
    st.markdown("### Where can I find more information?")

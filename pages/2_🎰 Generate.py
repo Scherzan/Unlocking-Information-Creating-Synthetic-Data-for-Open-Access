@@ -1,16 +1,16 @@
 
 import streamlit as st
 import matplotlib.pyplot as plt
-import fixed_params as fp
+import utils.fixed_params as fp
 from streamlit_ace import st_ace
 from utils.helper_f import local_css_from_str, str_css
 
 local_css_from_str([str_css]) 
 
-@st.cache_data(persist=True)
+@st.cache_data(persist=True) 
 def get_data():
    import pandas as pd
-   rpad_df = pd.read_excel(r'RPAD_data_small.xlsx', engine='openpyxl')
+   rpad_df = pd.read_excel(r'data/RPAD_data_small.xlsx', engine='openpyxl')
    # TODO: check column name paedriatic or pediatric (also in line 35, 45. bitte im gesamten File prüfen + anpassen)
    rpad_df.rename(columns={'Paedriatic_Appendicitis_Score': 'PA_Score'}, inplace=True)
 
@@ -65,7 +65,7 @@ with tab3:
    with st.expander(label="Conditional Tabular GAN Model", expanded=True):
         st.image("images/ctgan_architecure.png")
    with st.expander(label="default.py", expanded=False):
-        with open(f"/home/antonia/code/Unlocking-Information/pages/generation/code_files/default.py", "r") as f:
+        with open(f"utils/default.py", "r") as f:
             st.code(f.read())
 
 with tab4:
@@ -81,7 +81,7 @@ INITIAL_CODE = """
 import pandas as pd
 from sdv.metadata import SingleTableMetadata
 
-rpad_data = pd.read_excel(r'RPAD_data_small.xlsx', engine='openpyxl')
+rpad_data = pd.read_excel(r'data/RPAD_data_small.xlsx', engine='openpyxl')
 metadata = SingleTableMetadata()
 metadata.detect_from_dataframe(data=rpad_data)
 #st.write(metadata.to_dict()) # instead of print(metadata.to_dict())
@@ -149,7 +149,7 @@ with tab7:
 
    
    with st.expander(label="Define custom constraints in an example_custom_constraints.py file: ", expanded=False):
-       with open("example_custom_constraint.py", "r") as f: #/home/antonia/code/Unlocking-Information/
+       with open("utils/example_custom_constraint.py", "r") as f: 
           initial_code = f.read()
        st.code(str(initial_code), language="python")
 
