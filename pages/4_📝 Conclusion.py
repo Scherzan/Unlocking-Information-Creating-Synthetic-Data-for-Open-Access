@@ -67,12 +67,22 @@ with tab2:
 
 with tab3: 
    st.markdown("### Where can I find more information?")
-   st.write("https://github.com/sdv-dev/SDV")
-   st.write("https://docs.sdv.dev/sdv")
-   st.write("https://github.com/Scherzan/Unlocking-Information")
+   col_a, col_b = st.columns(2)
 
+   with col_a:
+      st.write("")
+      st.image("images/SDV.png", width=200)
+
+   with col_b:
+      st.write("")
+      st.write("https://github.com/sdv-dev/SDV")
+      st.write("https://docs.sdv.dev/sdv")
 
 
 with tab4: 
-   st.markdown("<h1 style='text-align: center; color:#1f449c;'>Thank you</h1>", unsafe_allow_html=True)
-   st.write("Find me on : github and linkedin or in the hallway to have a chat")
+   st.markdown("<h2 style='text-align: center; color:#1f449c;'>Happy Synthesizing 😃🧪</h2>", unsafe_allow_html=True)
+   st.write("")
+   st.write("Find me on:")
+   st.write("https://github.com/Scherzan")
+   st.write("https://www.linkedin.com/in/antonia-scherz-7b4740178")
+   st.write("or at the buffet. 😋")

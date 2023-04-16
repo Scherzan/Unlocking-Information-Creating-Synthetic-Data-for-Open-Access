@@ -21,6 +21,7 @@ with tab1:
        🧭: Consultant/Data Scientist \n
        """)
        st.image("images/anto_scherz.jpg")
+       st.write("LinekdIn: [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" % "https://www.linkedin.com/in/antonia-scherz-7b4740178")
           
    with col_b:
        st.write("### Project experience:")
@@ -34,6 +35,8 @@ with tab1:
            'My env',
            ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"],
            ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"])
+       st.write("")
+       st.write("Github: [https://github.com/Scherzan](%s)" % "https://github.com/Scherzan")
 
 # R; Stata; Plotly
        
