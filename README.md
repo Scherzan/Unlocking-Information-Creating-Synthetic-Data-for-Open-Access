@@ -1,8 +1,7 @@
 Unlocking Information - 
-Creating Synthetic Data for Open Access
+Creating Synthetic Data for Open Access  
 ===
-
-![PyConDE](./images/PyConDE_PyDataBer_circle_trans_500.png)
+<img src="./images/PyConDE_PyDataBer_circle_trans_500.png" data-canonical-src="./images/PyConDE_PyDataBer_circle_trans_500.png" width="100" />
 
 This repo provides the slides and the materials
 for [my talk at PyConDE/PyDataBerlin 2023](https://2023.pycon.de/program/J9KRKZ/), on Wednesday April 20th.
