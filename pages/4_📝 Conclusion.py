@@ -25,13 +25,13 @@ with tab1:
        """
        st.markdown(f'<p style="color:#1f449c">{text_2}</p>', unsafe_allow_html=True)
 
-    no_hardware = st.checkbox("No GPUs available")
-    if no_hardware:
-       text_3 = """
-       Not acceptable. 
-       Without hardware, models cannot train and generate data efficiently.
-       """
-       st.markdown(f'<p style="color:#1f449c">{text_3}</p>', unsafe_allow_html=True)
+    #no_hardware = st.checkbox("No GPUs available")
+    #if no_hardware:
+    #   text_3 = """
+    #   Not acceptable. 
+    #   Without hardware, models cannot train and generate data efficiently.
+    #   """
+    #   st.markdown(f'<p style="color:#1f449c">{text_3}</p>', unsafe_allow_html=True)
 
     no_hardware = st.checkbox("Know the users")
     if no_hardware:
@@ -59,11 +59,12 @@ with tab2:
 
     apply = st.checkbox("What should you take with you?")
     if apply:
-       text_31 = "1. Generating synthetic data is quite easy."
-       text_32 = "2. Generating usefull synthetic data is complex and takes carefull evaluation."
+       #text_31 = "1. Generating synthetic data is quite easy."
+       #text_32 = "2. Generating usefull synthetic data is complex and takes carefull evaluation."
        text_33 = "3. We need to select our metrics and evaluation strategy according to the specific use case."
-       for txt in [text_31, text_32, text_33]:
-          st.markdown(f'<p style="color:#1f449c";><strong>{txt}</strong></p>', unsafe_allow_html=True)
+       #for txt in [text_31, text_32, text_33]:
+       #   st.markdown(f'<p style="color:#1f449c";><strong>{txt}</strong></p>', unsafe_allow_html=True)
+       st.markdown(f'<p style="color:#1f449c";><strong>{text_33}</strong></p>', unsafe_allow_html=True)
 
 with tab3: 
    st.markdown("### Where can I find more information?")

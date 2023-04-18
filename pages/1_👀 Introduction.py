@@ -21,7 +21,7 @@ with tab1:
        🧭: Consultant/Data Scientist \n
        """)
        st.image("images/anto_scherz.jpg")
-       st.write("LinekdIn: [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" % "https://www.linkedin.com/in/antonia-scherz-7b4740178")
+       #st.write("LinekdIn: [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" % "https://www.linkedin.com/in/antonia-scherz-7b4740178")
           
    with col_b:
        st.write("### Project experience:")
@@ -31,12 +31,12 @@ with tab1:
        🪄 synthesize public administration data for scientific use 
        """)
    
-       options = st.multiselect(
-           'My env',
-           ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"],
-           ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"])
-       st.write("")
-       st.write("Github: [https://github.com/Scherzan](%s)" % "https://github.com/Scherzan")
+       #options = st.multiselect(
+       #    'My env',
+       #    ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"],
+       #    ['Python', 'Streamlit', 'Docker', 'PyTorch', "PyTest", "SDV", "Ray(tune)"])
+       #st.write("")
+       #st.write("Github: [https://github.com/Scherzan](%s)" % "https://github.com/Scherzan")
 
 # R; Stata; Plotly
        
@@ -44,14 +44,13 @@ with tab1:
 with tab2:
    st.markdown("### We will be looking at synthetic tabular data.")
    st.text("")
-   st.write("🎛️ How to control synthetic data quality for your own usecase.")
-   st.text("")
+   #st.write("🎛️ How to control synthetic data quality for your own usecase.")
+   #st.text("")
    st.write("📋 Demo exercise on how to generate and evaluate data.")
    st.text("")
    st.write("📊 Overview on metrics and evaluation strategies.")
    st.text("")
-   st.write("❗Learnings and common issues from synthetic data projects")
-   #st.markdown("Comments, feedback and questions: After talk/pm/Linkedin/twitter/")
+   st.write("❗Learnings from our synthetic data project")
 
 with tab3:
    st.markdown("### Synthetic data aims to remove any identifiable personal information from the dataset.")

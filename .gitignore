@@ -5,10 +5,4 @@ __pycache__/
 .ipynb_checkpoints
 
 # ignore models, data and metadat for now
-.json
-.pkl
-.xslx
-.csv
-#  Folders
-data/
-ressources/
+
