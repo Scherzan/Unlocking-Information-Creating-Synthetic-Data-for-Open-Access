@@ -12,17 +12,17 @@ data = [
                                       "and Tests"},
                                      {"name": "Distance Calculations"},
                                      {"name": "Visual Comparisons"},], 
-                        "name": "Univariate RA"
+                        "name": "Univariate"
                     }, 
                     {
                         "children": [{"name": "Pairwise Pearson \n"
                                                "Correlation"},
                                      {"name": "Contingency Table"},], 
-                        "name": "Multivariate Relationship"},
+                        "name": "Multivariate"},
                     {
                         "children": [{"name": "PCA Plots Comparison"},
                                      {"name": "Isomap Plots Comparison"},], 
-                        "name": "Dimensional RA"},
+                        "name": "Dimensional"},
                     {
                         "children": [{"name": "Train classifier to label\n"
                                       "real and synthetic records\n"
