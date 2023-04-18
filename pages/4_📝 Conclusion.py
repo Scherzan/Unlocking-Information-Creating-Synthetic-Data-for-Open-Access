@@ -84,6 +84,6 @@ with tab4:
    st.markdown("<h2 style='text-align: center; color:#1f449c;'>Happy Synthesizing 😃🧪</h2>", unsafe_allow_html=True)
    st.write("")
    st.write("Find me on:")
-   st.write("https://github.com/Scherzan")
+   st.write("https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access")
    st.write("https://www.linkedin.com/in/antonia-scherz-7b4740178")
    st.write("or at the buffet. 😋")

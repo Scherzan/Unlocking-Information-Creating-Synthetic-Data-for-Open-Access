@@ -12,9 +12,3 @@ model = CTGANSynthesizer(metadata)
 model.fit(rpad_df)
 
 synth_data = model.sample(num_rows=rpad_df.shape[0])
-
-quality_report = evaluate_quality(
-    rpad_df,
-    synth_data,
-    metadata
-)
