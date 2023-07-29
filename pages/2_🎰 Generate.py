@@ -19,7 +19,7 @@ def get_data():
 @st.cache_data(persist=True)
 def get_synt_data():
    import pandas as pd
-   rpad_synth = pd.read_csv("synthetic_rpad.csv")
+   rpad_synth = pd.read_csv("data/synthetic_rpad.csv")
    rpad_synth.rename(columns={'Paedriatic_Appendicitis_Score': 'PA_Score'}, inplace=True)
    return rpad_synth
 
