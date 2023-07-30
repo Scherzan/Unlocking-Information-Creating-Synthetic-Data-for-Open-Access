@@ -9,7 +9,7 @@ This repo provides the slides and the materials
 for [my talk at PyConDE/PyDataBerlin 2023]([https://www.youtube.com/watch?v=N1i_Z-WKaRs&list=PLGVZCDnMOq0peDguAzds7kVmBr8avp46K&index=14]), on Wednesday April 20th.
 
 ## To watch the slides you can follow these steps. 
-(You need to have conda and Python >= 3.10 installed
+You need to have conda and Python >= 3.10 installed
 
 ### Installation
 
