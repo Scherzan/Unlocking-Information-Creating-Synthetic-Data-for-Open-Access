@@ -1,5 +1,5 @@
 import streamlit as st
-import utils.fixed_params as fp 
+import utils.fixed_params as fp
 from utils.title import st_write_title
 
 
@@ -39,6 +39,4 @@ st_write_title()
 col_1, col_2, col_3 = st.columns(3)
 
 with col_2:
-   st.image(fp.CONFERENCE_LOGO_PATH, width=200)
-
-
+    st.image(fp.CONFERENCE_LOGO_PATH, width=200)

@@ -1,5 +1,5 @@
 import utils.fixed_params as fp
-from utils.html_factory import CSSStyle, make_div, st_write_bs4 
+from utils.html_factory import CSSStyle, make_div, st_write_bs4
 
 # Title
 TITLE_P1 = "Unlocking Information 🔓 Creating Synthetic Data for Open Access"
@@ -27,6 +27,7 @@ AUTHOR_STYLE = CSSStyle(
     margin_bottom="28px",
 )
 AUTHOR_DIV = make_div(style=AUTHOR_STYLE, text=fp.AUTHOR)
+
 
 # main
 def st_write_title():

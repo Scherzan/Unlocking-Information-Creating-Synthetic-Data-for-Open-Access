@@ -1,4 +1,3 @@
-from pathlib import Path
 
 AUTHOR = "Antonia Scherz"
 CONFERENCE_DATE = "April 19th, 2023"

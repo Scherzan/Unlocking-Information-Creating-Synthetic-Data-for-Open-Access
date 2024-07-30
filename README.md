@@ -9,15 +9,25 @@ This repo provides the slides and the materials
 for [my talk at PyConDE/PyDataBerlin 2023]([https://www.youtube.com/watch?v=N1i_Z-WKaRs&list=PLGVZCDnMOq0peDguAzds7kVmBr8avp46K&index=14]), on Wednesday April 20th.
 
 ## To watch the slides you can follow these steps. 
-You need to have conda and Python >= 3.10 installed
+You need to have Python 3.10 and uv installed.
 
-### Installation
+### Clone the repository and navigate to the directory
+
+use git clone or your preferred method to download/clone the repo.
+
+
+### Installation with uv
+
+Navigate to your project directory and do:
 
 ```bash
-conda env create --file environment.yml
+uv venv --python 3.10
 ```
 ```bash
-conda activate unlocking-information
+source .venv/bin/activate
+```
+```bash
+uv pip install -r requirements.txt
 ```
 
 ### Start the presentation

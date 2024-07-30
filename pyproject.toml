@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+requires-python = "~=3.10"
+name = "synthetic_data_talk"
+dynamic = ["version"]
+dependencies = [
+  "bs4",
+  "matplotlib",
+  "openpyxl",
+  "pyecharts",
+  "sdmetrics",
+  "sdv==1.0.0",
+  "setuptools",
+  "streamlit",
+  "streamlit_ace",
+  "streamlit_echarts",
+]
+
+[project.optional-dependencies]
+
+
+
+

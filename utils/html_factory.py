@@ -1,9 +1,6 @@
-import base64
-from functools import partial
-from pathlib import Path
-from typing import Literal, Optional
-
 import streamlit as st
+from functools import partial
+from typing import Literal, Optional
 from bs4 import BeautifulSoup
 
 TAG = Literal["div", "a", "span", "img"]
@@ -34,8 +31,6 @@ def make_tag(name: TAG, style: Optional[CSSStyle] = None, text: Optional[str] = 
 
 
 make_div = partial(make_tag, name="div")
-
-
 
 
 def st_write_bs4(soup: BeautifulSoup):
