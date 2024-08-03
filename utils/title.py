@@ -12,11 +12,7 @@ BIG_TITLE_STYLE = CSSStyle(
     font_weight=600,
 )
 BIG_TITLE_DIV = make_div(style=BIG_TITLE_STYLE)
-BIG_TITLE_DIV.extend(
-    [
-        make_div(text=TITLE_P1)
-    ]
-)
+BIG_TITLE_DIV.extend([make_div(text=TITLE_P1)])
 
 # Author
 AUTHOR_STYLE = CSSStyle(
@@ -33,4 +29,3 @@ AUTHOR_DIV = make_div(style=AUTHOR_STYLE, text=fp.AUTHOR)
 def st_write_title():
     st_write_bs4(BIG_TITLE_DIV)
     st_write_bs4(AUTHOR_DIV)
-    

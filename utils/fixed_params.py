@@ -1,4 +1,3 @@
-
 AUTHOR = "Antonia Scherz"
 CONFERENCE_DATE = "April 19th, 2023"
 CONFERENCE_NAME = "PyCon Berlin 2023"

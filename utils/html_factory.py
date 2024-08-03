@@ -1,6 +1,6 @@
 import streamlit as st
 from functools import partial
-from typing import Literal, Optional
+from typing import Literal
 from bs4 import BeautifulSoup
 
 TAG = Literal["div", "a", "span", "img"]
@@ -21,8 +21,14 @@ class CSSStyle:
         return key.replace("_", "-")
 
 
-def make_tag(name: TAG, style: Optional[CSSStyle] = None, text: Optional[str] = None) -> BeautifulSoup:
-    new_tag = BeautifulSoup().new_tag(name, style=str(style)) if style else BeautifulSoup().new_tag(name)
+def make_tag(
+    name: TAG, style: CSSStyle | None = None, text: str | None = None
+) -> BeautifulSoup:
+    new_tag = (
+        BeautifulSoup().new_tag(name, style=str(style))
+        if style
+        else BeautifulSoup().new_tag(name)
+    )
 
     if text:
         new_tag.append(text)

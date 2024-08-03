@@ -8,11 +8,12 @@ st.set_page_config(
     page_title=fp.CONFERENCE_NAME,
     page_icon=str(fp.CONFERENCE_LOGO_PATH),
     initial_sidebar_state="expanded",
-    layout="wide"
+    layout="wide",
 )
 
 
-st.markdown("""
+st.markdown(
+    """
     <style>
       section[data-testid="stSidebar"][aria-expanded="true"]{
         width: 10% !important;
@@ -32,7 +33,9 @@ st.markdown("""
           padding-bottom: 3.5rem;
           padding-left: 1rem;
       }
-    </style>""", unsafe_allow_html=True)
+    </style>""",
+    unsafe_allow_html=True,
+)
 
 st_write_title()
 

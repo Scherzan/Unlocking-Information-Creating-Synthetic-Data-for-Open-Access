@@ -5,11 +5,16 @@ from utils.helper_f import local_css_from_str, str_css, str_selectbox_text
 local_css_from_str([str_css, str_selectbox_text])
 
 # Define tab labels
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["I am", "talking about",
-                                              "synthetic data,",
-                                              "when to use it,",
-                                              "why to use it",
-                                              "and how to generate it."])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
+    [
+        "I am",
+        "talking about",
+        "synthetic data,",
+        "when to use it,",
+        "why to use it",
+        "and how to generate it.",
+    ]
+)
 
 # Tab 1: About Me
 with tab1:
@@ -27,10 +32,10 @@ with tab1:
         st.write("""LinekdIn: 
                  [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" % 
                  "https://www.linkedin.com/in/antonia-scherz-7b4740178""")
-          
+
     with col_b:
         st.write("### Project experience:")
-    
+
         st.write("""
         🪄 prototyping ml-applications and exploring their value
                  for the public sector \n
@@ -51,8 +56,9 @@ with tab2:
 with tab3:
     st.markdown("""### Synthetic data aims to remove any identifiable 
                 personal information from the dataset.""")
-    st.write('<style>div.block-container{padding-top:2rem;}</style>', 
-             unsafe_allow_html=True)
+    st.write(
+        "<style>div.block-container{padding-top:2rem;}</style>", unsafe_allow_html=True
+    )
     st.image("images/rd_to_std.png", width=650)
 
 # Tab 4: Use Cases
@@ -72,21 +78,3 @@ with tab5:
 with tab6:
     st.markdown("### One needs real data to generate synthetic data models.")
     st.image("images/generation.png", width=700)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

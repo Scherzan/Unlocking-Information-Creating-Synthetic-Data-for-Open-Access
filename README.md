@@ -13,7 +13,7 @@ You need to have Python 3.10 and uv installed.
 
 ### Clone the repository and navigate to the directory
 
-use git clone or your preferred method to download/clone the repo.
+Use git clone or your preferred method to download/clone the repo.
 
 
 ### Installation with uv
