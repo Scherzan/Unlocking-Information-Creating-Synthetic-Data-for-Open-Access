@@ -1,7 +1,7 @@
 import streamlit as st
+
 import utils.fixed_params as fp
 from utils.title import st_write_title
-
 
 # Streamlit webpage properties
 st.set_page_config(

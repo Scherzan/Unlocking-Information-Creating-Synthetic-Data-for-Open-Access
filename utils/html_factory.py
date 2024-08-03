@@ -1,6 +1,7 @@
-import streamlit as st
 from functools import partial
 from typing import Literal
+
+import streamlit as st
 from bs4 import BeautifulSoup
 
 TAG = Literal["div", "a", "span", "img"]

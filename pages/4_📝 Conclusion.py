@@ -1,4 +1,5 @@
 import streamlit as st
+
 from utils.helper_f import local_css_from_str, str_css
 
 local_css_from_str([str_css])

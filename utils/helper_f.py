@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import streamlit as st
-from sdmetrics.reports.single_table import QualityReport
-from sdmetrics.reports.single_table import DiagnosticReport
+from sdmetrics.reports.single_table import DiagnosticReport, QualityReport
 
 
 # Create a circle at the center of the plot

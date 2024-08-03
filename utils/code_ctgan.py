@@ -1,7 +1,7 @@
 import pandas as pd
+from sdv.evaluation.single_table import evaluate_quality
 from sdv.lite import CTGANSynthesizer
 from sdv.metadata import SingleTableMetadata
-from sdv.evaluation.single_table import evaluate_quality
 
 rpad_df = pd.read_excel(r"RPAD_data_small.xlsx", engine="openpyxl")
 

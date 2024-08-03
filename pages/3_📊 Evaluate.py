@@ -1,13 +1,13 @@
-import streamlit as st
-import pandas as pd
 import json
 
-from utils.helper_f import load_reports, get_image_paths, local_css_from_str
-from utils.helper_f import str_css
-from sdv.single_table import CTGANSynthesizer
+import pandas as pd
+import streamlit as st
 from sdv.metadata import SingleTableMetadata
-from utils.chart_metrics import c
+from sdv.single_table import CTGANSynthesizer
 from streamlit_echarts import st_pyecharts
+
+from utils.chart_metrics import c
+from utils.helper_f import get_image_paths, load_reports, local_css_from_str, str_css
 
 local_css_from_str([str_css])
 

@@ -56,7 +56,13 @@ line-length = 88
 indent-width = 4
 
 [tool.ruff.lint]
-extend-select = ["UP"]
+extend-select = [
+  "UP",
+  "E",
+  "W",
+  "I",
+  
+  ]
 
 
 
