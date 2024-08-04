@@ -8,7 +8,7 @@ data = [
                 "children": [
                     {
                         "children": [
-                            {"name": "Statistical Moments \n" "and Tests"},
+                            {"name": "Statistical Moments \nand Tests"},
                             {"name": "Distance Calculations"},
                             {"name": "Visual Comparisons"},
                         ],
@@ -16,7 +16,7 @@ data = [
                     },
                     {
                         "children": [
-                            {"name": "Pairwise Pearson \n" "Correlation"},
+                            {"name": "Pairwise Pearson \nCorrelation"},
                             {"name": "Contingency Table"},
                         ],
                         "name": "Multivariate",
@@ -33,7 +33,7 @@ data = [
                             {
                                 "name": "Train classifier to label\n"
                                 "real and synthetic records\n"
-                                "and analyse its performance"
+                                "and analyse its performance",
                             },
                         ],
                         "name": "Data Labeling",
@@ -53,12 +53,12 @@ data = [
                                             "train your prediction model
                                             on synthetic data, \n"
                                             "compare prediction task
-                                            performance on real test data \n"""
-                            }
+                                            performance on real test data \n""",
+                            },
                         ],
                         "name": """"Downstream Task
                                            Evaluation""",
-                    }
+                    },
                 ],
                 "name": "Utility Evaluation",
             },
@@ -91,7 +91,7 @@ data = [
                             {"name": "PCA"},
                             {"name": "Utility Evaluation (ML-Task)"},
                         ],
-                        "name": "Similarity Score \n" "(Brenninkmeijer & Hille)",
+                        "name": "Similarity Score \n(Brenninkmeijer & Hille)",
                     },
                     {
                         "children": [
@@ -101,35 +101,35 @@ data = [
                             {"name": "Propensity Mean Squared Error"},
                             {"name": "Support Coverage"},
                         ],
-                        "name": "TabSynDex \n" "(Chundawat et al.)",
+                        "name": "TabSynDex \n(Chundawat et al.)",
                     },
                     {
                         "children": [
                             {
                                 "name": """Resemblance Analysis
-                                   (URA, MRA, DRA, DLA)"""
+                                   (URA, MRA, DRA, DLA)""",
                             },
                             {
                                 "name": """Utility Evaluation
-                                   (classification)"""
+                                   (classification)""",
                             },
                             {"name": "Privacy Evaluation (SEA, RIRA)"},
                         ],
-                        "name": "Categorization of Quality \n" "(Hernandez et al.)",
+                        "name": "Categorization of Quality \n(Hernandez et al.)",
                     },
                     {
                         "children": [
-                            {"name": "Univariate Statistical \n" "Tests"},
-                            {"name": "Correlation and \n" "Contingency Measures"},
+                            {"name": "Univariate Statistical \nTests"},
+                            {"name": "Correlation and \nContingency Measures"},
                         ],
-                        "name": "Quality Score \n" "(Synthetic Data Vault)",
+                        "name": "Quality Score \n(Synthetic Data Vault)",
                     },
                 ],
                 "name": "One Overall Metric",
             },
         ],
         "name": "Evaluation Metrics",
-    }
+    },
 ]
 c = Tree().add(
     "",

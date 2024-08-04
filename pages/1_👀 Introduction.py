@@ -14,7 +14,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
         "when to use it,",
         "why to use it",
         "and how to generate it.",
-    ]
+    ],
 )
 
 # Tab 1: About Me
@@ -30,8 +30,8 @@ with tab1:
         🧭: Consultant/Data Scientist \n
         """)
         st.image("images/anto_scherz.jpg")
-        st.write("""LinekdIn: 
-                 [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" % 
+        st.write("""LinekdIn:
+                 [https://www.linkedin.com/in/antonia-scherz-7b4740178](%s)" %
                  "https://www.linkedin.com/in/antonia-scherz-7b4740178""")
 
     with col_b:
@@ -55,10 +55,10 @@ with tab2:
 
 # Tab 3: Value of Synthetic Data
 with tab3:
-    st.markdown("""### Synthetic data aims to remove any identifiable 
+    st.markdown("""### Synthetic data aims to remove any identifiable
                 personal information from the dataset.""")
     st.write(
-        "<style>div.block-container{padding-top:2rem;}</style>", unsafe_allow_html=True
+        "<style>div.block-container{padding-top:2rem;}</style>", unsafe_allow_html=True,
     )
     st.image("images/rd_to_std.png", width=650)
 
@@ -71,7 +71,7 @@ with tab4:
 
 # Tab 5: Difference Anonymization
 with tab5:
-    st.markdown("""### Synthetic data differs from anonymization 
+    st.markdown("""### Synthetic data differs from anonymization
                 in that it retains the original data.""")
     st.image("images/bilder_anon.png")
 

@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -21,7 +22,7 @@ def get_eval_utils(
     rpad_df = pd.read_excel(r"RPAD_data_small.xlsx", engine="openpyxl")
     rpad_synth = pd.read_csv(synth_data_path)
     model = CTGANSynthesizer.load(model_path)
-    with open(metadata_file) as f:
+    with Path.open(metadata_file) as f:
         metadata_dict = json.load(f)
     metadata = SingleTableMetadata.load_from_dict(metadata_dict)
     return rpad_df, rpad_synth, model, metadata
@@ -87,7 +88,7 @@ tab1, tab2, tab3, tab4 = st.tabs(
         "guide your SD evaluation",
         "e.g. statistical indicators",
         "and visual inspections.",
-    ]
+    ],
 )
 
 with tab1:

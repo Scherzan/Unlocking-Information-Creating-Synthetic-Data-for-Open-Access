@@ -10,7 +10,7 @@ tab1, tab2, tab3, tab4 = st.tabs(
         "So far so good. ✅",
         "Where to go next? 🧭",
         "Thank you. 💛",
-    ]
+    ],
 )
 
 with tab1:
@@ -23,7 +23,7 @@ with tab1:
         """
         st.markdown(f'<p style="color:#1f449c">{text}</p>', unsafe_allow_html=True)
 
-    no_data_access = st.checkbox("""No access to data 
+    no_data_access = st.checkbox("""No access to data
                                  due to privacy regulations""")
     if no_data_access:
         text_2 = """
@@ -94,7 +94,7 @@ with tab4:
     st.write("")
     st.write("Find me on:")
     st.write(
-        "https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access"
+        "https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access",
     )
     st.write("https://www.linkedin.com/in/antonia-scherz-7b4740178")
     st.write("or at the buffet. 😋")

@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
@@ -19,7 +21,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
         "Describe the data",
         "better",
         "and tune it",
-    ]
+    ],
 )
 
 
@@ -27,17 +29,15 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
 @st.cache_data(persist=True)
 def get_data():
     rpad_df = pd.read_excel(r"data/RPAD_data_small.xlsx", engine="openpyxl")
-    rpad_df.rename(columns={"Paedriatic_Appendicitis_Score": "PA_Score"}, inplace=True)
-    return rpad_df
+    return rpad_df.rename(columns={"Paedriatic_Appendicitis_Score": "PA_Score"})
 
 
 @st.cache_data(persist=True)
 def get_synt_data():
     rpad_synth = pd.read_csv("data/synthetic_rpad.csv")
-    rpad_synth.rename(
-        columns={"Paedriatic_Appendicitis_Score": "PA_Score"}, inplace=True
+    return rpad_synth.rename(
+        columns={"Paedriatic_Appendicitis_Score": "PA_Score"},
     )
-    return rpad_synth
 
 
 # Load data
@@ -83,7 +83,7 @@ with tab1:
                 "PA_Score",
             ],
             formatter="{:.2f}",
-        )
+        ),
     )
 
 # Display SDV matrix on model types
@@ -97,7 +97,7 @@ with tab3:
     with st.expander(label="Conditional Tabular GAN Model", expanded=True):
         st.image("images/ctgan_architecure.png")
     with st.expander(label="default.py", expanded=False):
-        with open("utils/default.py") as f:
+        with Path.open("utils/default.py") as f:
             st.code(f.read())
 
 # Display synthetic data
@@ -115,7 +115,7 @@ with tab4:
                 "PA_Score",
             ],
             formatter="{:.2f}",
-        )
+        ),
     )
 
 with tab5:
@@ -138,7 +138,7 @@ with tab6:
 
     # Spawn a new Ace editor
     code = st_ace(
-        value=INITIAL_CODE, language="python", placeholder="st.header('Hello world!')"
+        value=INITIAL_CODE, language="python", placeholder="st.header('Hello world!')",
     )
     st.write(exec(code))
 
@@ -199,12 +199,12 @@ with tab7:
                      file: """,
         expanded=False,
     ):
-        with open("utils/example_custom_constraint.py") as f:
+        with Path.open("utils/example_custom_constraint.py") as f:
             initial_code = f.read()
         st.code(str(initial_code), language="python")
 
     with st.expander(
-        label="Load and append custom constraint to synthesizer", expanded=False
+        label="Load and append custom constraint to synthesizer", expanded=False,
     ):
         st.code(INITIAL_CODE_CONSTRAINS, language="python")
 

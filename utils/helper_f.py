@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import streamlit as st
 from sdmetrics.reports.single_table import DiagnosticReport, QualityReport
@@ -12,18 +14,12 @@ def plot_circle(names, size, colors):
     plt.show()
 
 
-def st_write_code_from_file(file_name, expanded=True, *args, **kwargs) -> None:
-    with st.expander(label=f" {file_name}", expanded=expanded):
-        with open(f"/home/antonia/code/Unlocking-Information/{file_name}") as f:
-            st.code(f.read(), *args, **kwargs)
-
-
 def load_reports(folder_name=""):
     diagnostic_report = DiagnosticReport.load(
-        f"pages/evaluation/{folder_name}/results/diagnostic_report.pkl"
+        f"pages/evaluation/{folder_name}/results/diagnostic_report.pkl",
     )
     report_q = QualityReport.load(
-        f"pages/evaluation/{folder_name}/results/quality_report.pkl"
+        f"pages/evaluation/{folder_name}/results/quality_report.pkl",
     )
     return diagnostic_report, report_q
 
@@ -55,7 +51,7 @@ def get_image_paths(folder_name=""):
 
 
 def local_css(file_name):
-    with open(file_name) as f:
+    with Path.open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
