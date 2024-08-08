@@ -46,7 +46,9 @@ class CSSStyle:
 
 
 def make_tag(
-    name: TAG, style: CSSStyle | None = None, text: str | None = None,
+    name: TAG,
+    style: CSSStyle | None = None,
+    text: str | None = None,
 ) -> BeautifulSoup:
     new_tag = (
         BeautifulSoup().new_tag(name, style=str(style))

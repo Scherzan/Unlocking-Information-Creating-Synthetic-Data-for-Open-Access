@@ -1,5 +1,4 @@
 import streamlit as st
-
 from utils.helper_f import local_css_from_str, str_css
 
 local_css_from_str([str_css])
@@ -23,8 +22,10 @@ with tab1:
         """
         st.markdown(f'<p style="color:#1f449c">{text}</p>', unsafe_allow_html=True)
 
-    no_data_access = st.checkbox("""No access to data
-                                 due to privacy regulations""")
+    no_data_access = st.checkbox(
+        """No access to data
+                                 due to privacy regulations""",
+    )
     if no_data_access:
         text_2 = """
         Not good, would be much easier with direct access.
@@ -44,8 +45,10 @@ with tab1:
 with tab2:
     st.markdown("### Let's reflect on what we heard.")
 
-    no_ds_team = st.checkbox("""We heard about synthetic data
-                             and how to generate it.""")
+    no_ds_team = st.checkbox(
+        """We heard about synthetic data
+                             and how to generate it.""",
+    )
     if no_ds_team:
         text = """
         Yep, quite easy. pip install SDV - load data - feed data into model
@@ -53,8 +56,10 @@ with tab2:
         """
         st.markdown(f'<p style="color:#1f449c">{text}</p>', unsafe_allow_html=True)
 
-    no_data_access = st.checkbox("""We looked at metrics and how
-                                 to evaluate synthetic data quality.""")
+    no_data_access = st.checkbox(
+        """We looked at metrics and how
+                                 to evaluate synthetic data quality.""",
+    )
     if no_data_access:
         text_2 = """
         Yes, but only superficially. The presented metrics
@@ -94,7 +99,10 @@ with tab4:
     st.write("")
     st.write("Find me on:")
     st.write(
-        "https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access",
+        (
+            "https://github.com/Scherzan/"
+            "Unlocking-Information-Creating-Synthetic-Data-for--Access"
+        ),
     )
     st.write("https://www.linkedin.com/in/antonia-scherz-7b4740178")
     st.write("or at the buffet. 😋")

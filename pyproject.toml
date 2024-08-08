@@ -19,8 +19,16 @@ dependencies = [
   "streamlit_echarts",
 ]
 
+[project.urls]
+Homepage = "https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access"
+Source = "https://github.com/Scherzan/Unlocking-Information-Creating-Synthetic-Data-for-Open-Access"
+
+[tool.hatch.version]
+path = "synthetic_data_talk/__init__.py"
+
+
 [project.optional-dependencies]
-dev = ["ruff", "pre-commit"]
+dev = ["ruff", "pre-commit", "pytest"]
 
 [tool.ruff]
 exclude = [
@@ -104,9 +112,10 @@ extend-select = [
   ]
 
 
-ignore = ["D100", 
-          "D103", 
-          "ANN",
-          "SIM",
+ignore = ["D100", # too lazy to document all modules for now
+          "D103", # too lazy to document all classes for now
+          "D104", # too lazy to document all public packages for now
+          "N999", # does not allow emojis in file name but wanted
+          "S102", # does not allow exec which needed for now
+          "S101" # does not allow for assert in test
         ]
-

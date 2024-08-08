@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 from streamlit_ace import st_ace
-
 from utils.helper_f import local_css_from_str, str_css
 
 # Load local CSS styles
@@ -97,7 +96,8 @@ with tab3:
     with st.expander(label="Conditional Tabular GAN Model", expanded=True):
         st.image("images/ctgan_architecure.png")
     with st.expander(label="default.py", expanded=False):
-        with Path.open("utils/default.py") as f:
+        path = Path("utils/default.py")
+        with Path.open(path) as f:
             st.code(f.read())
 
 # Display synthetic data
@@ -138,7 +138,9 @@ with tab6:
 
     # Spawn a new Ace editor
     code = st_ace(
-        value=INITIAL_CODE, language="python", placeholder="st.header('Hello world!')",
+        value=INITIAL_CODE,
+        language="python",
+        placeholder="st.header('Hello world!')",
     )
     st.write(exec(code))
 
@@ -182,8 +184,10 @@ model.add_constraints([bmi_constraint])
 
 # beispiel überdenken
 with tab7:
-    st.header("""Custom constraints help the model learn the distributions
-              of values within columns.""")
+    st.header(
+        """Custom constraints help the model learn the distributions
+              of values within columns.""",
+    )
     with st.expander(label="Checking for constraints", expanded=True):
         col_a, col_b = st.columns(2)
 
@@ -199,12 +203,14 @@ with tab7:
                      file: """,
         expanded=False,
     ):
-        with Path.open("utils/example_custom_constraint.py") as f:
+        path = Path("utils/example_custom_constraint.py")
+        with Path.open(path) as f:
             initial_code = f.read()
         st.code(str(initial_code), language="python")
 
     with st.expander(
-        label="Load and append custom constraint to synthesizer", expanded=False,
+        label="Load and append custom constraint to synthesizer",
+        expanded=False,
     ):
         st.code(INITIAL_CODE_CONSTRAINS, language="python")
 

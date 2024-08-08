@@ -6,7 +6,6 @@ import streamlit as st
 from sdv.metadata import SingleTableMetadata
 from sdv.single_table import CTGANSynthesizer
 from streamlit_echarts import st_pyecharts
-
 from utils.chart_metrics import c
 from utils.helper_f import get_image_paths, load_reports, local_css_from_str, str_css
 
@@ -93,9 +92,11 @@ tab1, tab2, tab3, tab4 = st.tabs(
 
 with tab1:
     st.markdown("### What metrics are there?")
-    st.markdown("""###### Overview by Hernandez et al. 2021 \
+    st.markdown(
+        """###### Overview by Hernandez et al. 2021 \
                 Standardised Metrics and Methods for \
-                Synthetic Tabular Data Evaluation; TechRxiv; (edited)""")
+                Synthetic Tabular Data Evaluation; TechRxiv; (edited)""",
+    )
     st_pyecharts(c, height=500)
 
 with tab2:
