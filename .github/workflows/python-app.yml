@@ -27,7 +27,7 @@ jobs:
           uv pip install .  
           uv pip install .[dev]   
         continue-on-error: true  
-      - uses: chartboost/ruff-action@v1
+      - uses: chartboost/ruff-action@v1 #default ruff action or does it use my pyprject.toml?
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
