@@ -120,3 +120,6 @@ ignore = ["D100", # too lazy to document all modules for now
           "S102", # does not allow exec which needed for now
           "S101" # does not allow for assert in tests
         ]
+
+[lint.per-file-ignores]
+"*.ipynb" = ["E501", "E402", "W291", "W293", "COM812]
