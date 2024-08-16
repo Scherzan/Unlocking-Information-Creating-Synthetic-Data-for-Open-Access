@@ -122,4 +122,4 @@ ignore = ["D100", # too lazy to document all modules for now
         ]
 
 [lint.per-file-ignores]
-"*.ipynb" = ["E501", "E402", "W291", "W293", "COM812]
+"*.ipynb" = ["E501", "E402", "W291", "W293", "COM812"]
