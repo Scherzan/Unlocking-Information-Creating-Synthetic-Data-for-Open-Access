@@ -37,5 +37,5 @@ jobs:
           coverage report -m
       - name: test if app starts
         run: | #do I need to exit this step?
-          cd /synthetic_data_talk
+          cd synthetic_data_talk/
           streamlit run 🔓_Synthetic_Data.py
