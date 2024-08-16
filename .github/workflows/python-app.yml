@@ -9,9 +9,11 @@ on:
 
 jobs:
   build:  
-    runs-on: ubuntu-latest  
-    strategy:  
-      matrix:  
+    runs-on: ${{ matrix.os }}  
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]   #windows-latest
         python-version: ["3.10"]  
   
     steps:  
@@ -22,14 +24,19 @@ jobs:
           python-version: ${{ matrix.python-version }}  
       - name: Install dependencies  
         run: |  
-          python -m uv pip install --upgrade pip  
-          uv pip install .  
-          uv pip install .[dev]   
-        continue-on-error: true  
-      - uses: chartboost/ruff-action@v1
+          python -m pip install --upgrade pip  
+          pip install .  
+          pip install .[dev]   
+        continue-on-error: false
+      - name: Run Ruff
+        run: ruff check --fix --config=pyproject.toml --output-format=github .
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
       - name: Generate Coverage Report  
         run: |  
           coverage report -m
+      - name: test if app starts
+        run: | #do I need to exit this step?
+          cd /synthetic_data_talk
+          streamlit run 🔓_Synthetic_Data.py
