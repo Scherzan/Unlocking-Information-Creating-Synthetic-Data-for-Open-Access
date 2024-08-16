@@ -28,7 +28,7 @@ jobs:
           pip install .  
           pip install .[dev]   
         continue-on-error: false
-      - name: Run Ruff
+      - name: Run Ruff # check if ruff runs when pyproject pushed
         run: ruff check --fix --config=pyproject.toml --output-format=github .
       - name: Test with pytest  
         run: |  
