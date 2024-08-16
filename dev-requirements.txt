@@ -248,8 +248,8 @@ rpds-py==0.20.0
     # via
     #   jsonschema
     #   referencing
-ruff==0.6.0
-    # via synthetic-data-talk (pyproject.toml)
+#ruff==0.6.0
+#    # via synthetic-data-talk (pyproject.toml)
 s3transfer==0.10.2
     # via boto3
 scikit-learn==1.5.1
