@@ -30,7 +30,7 @@ jobs:
         continue-on-error: false
       - uses: chartboost/ruff-action@v1 #default ruff action or does it use my pyprject.toml?
         with:
-          args: '--fix --config=pyproject.toml' #do I need to add --check?
+          args: 'check --fix --config=pyproject.toml' #do I need to add --check?
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
