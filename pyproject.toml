@@ -117,5 +117,5 @@ ignore = ["D100", # too lazy to document all modules for now
           "D104", # too lazy to document all public packages for now
           "N999", # does not allow emojis in file name but wanted
           "S102", # does not allow exec which needed for now
-          "S101" # does not allow for assert in test
+          "S101" # does not allow for assert in tests
         ]
