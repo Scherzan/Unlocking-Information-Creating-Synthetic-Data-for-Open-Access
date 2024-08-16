@@ -28,7 +28,7 @@ path = "synthetic_data_talk/__init__.py"
 
 
 [project.optional-dependencies]
-dev = ["ruff", "pre-commit", "pytest"]
+dev = ["ruff", "pre-commit", "pytest", "coverage", "pip-tools"]
 
 [tool.ruff]
 exclude = [
