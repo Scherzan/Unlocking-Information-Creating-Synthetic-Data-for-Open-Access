@@ -27,8 +27,8 @@ jobs:
           python -m pip install --upgrade pip  
           if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi  
         continue-on-error: false
-      - name: Run Ruff # check if ruff runs when pyproject pushed
-        run: ruff check --fix --config=pyproject.toml #--output-format=github .
+      - name: Run Ruff 
+        run: ruff check --output-format=github .
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
