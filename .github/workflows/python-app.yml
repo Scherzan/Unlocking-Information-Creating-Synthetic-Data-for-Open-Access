@@ -28,9 +28,8 @@ jobs:
           pip install .  
           pip install .[dev]   
         continue-on-error: false
-      - uses: chartboost/ruff-action@v1 #default ruff action or does it use my pyprject.toml?
-        with:
-          args: 'check --fix --config=pyproject.toml' #do I need to add --check?
+      - name: Run Ruff
+        run: ruff check --fix --config=pyproject.toml --output-format=github .
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
