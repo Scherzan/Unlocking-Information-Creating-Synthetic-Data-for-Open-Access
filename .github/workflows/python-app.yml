@@ -9,9 +9,10 @@ on:
 
 jobs:
   build:  
-    runs-on: ubuntu-latest  
+    runs-on: ${{ matrix.os }}  
     strategy:  
-      matrix:  
+      matrix:
+        os: [ubuntu-latest, windows-latest]  
         python-version: ["3.10"]  
   
     steps:  
@@ -33,3 +34,7 @@ jobs:
       - name: Generate Coverage Report  
         run: |  
           coverage report -m
+      - name: test if app starts
+        run: | #do I need to exit this step?
+          cd /synthetic_data_talk
+          streamlit run 🔓_Synthetic_Data.py
