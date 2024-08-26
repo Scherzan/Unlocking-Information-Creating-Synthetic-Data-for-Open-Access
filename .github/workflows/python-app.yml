@@ -27,8 +27,8 @@ jobs:
           python -m pip install --upgrade pip  
           if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi  
         continue-on-error: false
-      #- name: Run Ruff 
-      #  run: ruff check --output-format=github .
+      - name: Run Ruff 
+        run: ruff check --output-format=github .
       - name: Test with pytest  
         run: |  
           coverage run -m pytest  -v -s  
@@ -39,3 +39,4 @@ jobs:
         run: | #do I need to exit this step?
           cd synthetic_data_talk/
           streamlit run 🔓_Synthetic_Data.py
+
