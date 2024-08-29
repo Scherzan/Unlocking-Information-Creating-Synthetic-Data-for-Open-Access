@@ -19,7 +19,7 @@ jobs:
     steps:  
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}  
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:  
           python-version: ${{ matrix.python-version }}  
       - name: Install dependencies  
@@ -35,8 +35,8 @@ jobs:
       - name: Generate Coverage Report  
         run: |  
           coverage report -m
-      - name: test if app starts
-        run: | #do I need to exit this step?
-          cd synthetic_data_talk/
-          streamlit run 🔓_Synthetic_Data.py
+      - uses: streamlit/streamlit-app-action@v0.0.3
+        with:
+          app-path: synthetic_data_talk/🔓_Synthetic_Data.py
+          ruff: true
 
