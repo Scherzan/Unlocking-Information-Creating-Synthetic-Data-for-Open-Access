@@ -46,3 +46,16 @@ Creating Synthetic Data for Open Access
 
 Find accompanying notebooks in the demo_notebook folder
 
+## GitHub Copilot Agent Documentation
+
+If you're using GitHub Copilot with this repository, check out our comprehensive guide on how to use SKILL files, instruction files, prompt files, and agent files:
+
+📖 **[GitHub Copilot Agents Guide](GITHUB_COPILOT_AGENTS.md)**
+
+This guide covers:
+- Understanding SKILL files, instruction files, prompt files, and agent files
+- Where these files are located and how to organize them
+- Typical use cases and examples
+- How specs relate to the agent workflow
+- Best practices for creating custom agents
+
