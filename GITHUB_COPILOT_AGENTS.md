@@ -16,7 +16,11 @@
 
 ## Overview
 
-> **Note**: This guide describes the conceptual framework and best practices for organizing AI agent configurations in your repository. The file formats and structures presented here are based on GitHub Copilot's extensibility patterns and common practices for customizing AI coding assistants. While GitHub Copilot Workspace supports custom agents, the specific implementation details may vary. This guide serves as a reference architecture for structuring agent-related files in your repository.
+> **Note**: This guide describes the conceptual framework and best practices for organizing AI agent configurations in your repository. Key points:
+> - File formats and structures are based on GitHub Copilot's extensibility patterns
+> - Common practices for customizing AI coding assistants
+> - Implementation details may vary depending on your GitHub Copilot version
+> - Serves as a reference architecture for structuring agent-related files
 
 GitHub Copilot's agent system allows you to customize and extend the behavior of AI coding agents that work on your repository. The system uses several types of files to define agent capabilities, instructions, prompts, and specifications. Understanding how these files work together is crucial for effectively leveraging Copilot's power in your development workflow.
 
@@ -714,4 +718,4 @@ By organizing these files properly and understanding their relationships, you ca
 
 ---
 
-*Last updated: January 2026*
+*Document version: 1.0 | Created: January 26, 2026*
